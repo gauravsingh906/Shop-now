@@ -8,11 +8,11 @@ function CartItem({ item, itemIndex }) {
     const dispatch = useDispatch();
     function removeFromCart() {
         dispatch(remove(item.id))
-        toast.error("Item removed From Cart")
+        toast.error("Item removed from Cart")
     }
 
     return (
-        <div className="flex items-center p-4 border-b border-gray-500">
+        <div className="flex items-center p-4 border-b border-gray-500 transform hover:scale-105 transition duration-300 hover:bg-gray-100 rounded-lg shadow-lg">
             <div className="w-[30%] mr-4">
                 <img src={item.images[0]} alt={item.title} className="w-full h-auto object-contain" />
             </div>
@@ -21,7 +21,7 @@ function CartItem({ item, itemIndex }) {
                 <h1 className="text-sm text-gray-700 mb-4">{item.description.split(" ").slice(0, 40).join(" ") + "..."}</h1>
                 <div className="flex justify-between items-center">
                     <p className="text-green-600 font-bold text-lg">${item.price}</p>
-                    <div onClick={removeFromCart} className="cursor-pointer hover:bg-red-200 rounded-full m-4 p-2 text-2xl hover:text-red-500 transition duration-300">
+                    <div onClick={removeFromCart} className="cursor-pointer hover:bg-red-200 rounded-full m-4 p-2 text-2xl hover:text-red-500 transition duration-300 transform hover:scale-110">
                         <RiDeleteBin5Line className="text-1xl text-red-500" />
                     </div>
                 </div>
